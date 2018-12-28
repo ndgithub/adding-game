@@ -1,0 +1,42 @@
+#instructions {
+
+}
+
+#random_number {
+
+}
+
+#outer_bar {
+
+}
+
+#inner_bar {
+
+}
+
+#my_number {
+
+}
+
+#crystals_container {
+
+}
+
+#win_loss_container {
+
+}
+
+#wins {
+
+}
+
+#losses {
+
+}
+
+.crystal {
+    border: 1px solid #000;
+    display: inline-block;
+    height: 40px;
+    width:40px;
+}
