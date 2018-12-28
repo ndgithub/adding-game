@@ -9,31 +9,44 @@ var crystalValues = [];
 
 function onStart() {
     crystalPoints = getCrystalValuesArray();
+    randomNumber = getRandomNumber();
+    console.log("red number is" + randomNumber);
     updateDisplay();
+    updatePointAttributValues();
     setClickListeners();
+    console.log("caca");
 }
 
 function updateDisplay() {
-    /*var myNumberDiv = $("#my_number");
+    $("#my_number").html(myNumber);
+    $("#random_number").html(randomNumber);
     var innerBarDiv = $("#inner_bar");
-    var winsDiv = $("wins");
-    var lossDiv = $("losses");
-    var myNumber = $("losses");*/
+    $("#wins").html(wins);
+    $("#losses").html(losses);
+    console.log(myNumber);
+
+
 }
 
 // random number 19 - 120
 // crystal 1 - 12
 
-function onShapeClick() {
-    // Add shapeValue to myNumber
+function onShapeClick(pointValue) {
+    myNumber += parseInt(pointValue, 10);
+    console.log(myNumber + " " + randomNumber);
     if (myNumber < randomNumber) {
-        return;
+        updateDisplay();
+        console.log("myNumber is still Less");
     } else if (myNumber === randomNumber) {
-        wins++
+        console.log("i won");
+        wins++;
         nextRound();
+
     } else {
         losses++;
+        console.log("i lost");
         nextRound();
+
     }
 
 }
@@ -47,31 +60,49 @@ function isGameOver() {
 }
 
 function nextRound() {
-    //generate new random number
-    updateDisplay
+    console.log("nextRound()")
+    randomNumber = getRandomNumber();
+    myNumber = 0;
+    crystalPoints = getCrystalValuesArray();
+    updatePointAttributValues();
+    updateDisplay();
 }
 
 function getCrystalValuesArray() {
     var randomNumbersArray = [];
-    for (var i = 0; i === 4; i++) {
-        newArray.push(getCrystalValue());
+    for (var i = 0; i < 4; i++) {
+        randomNumbersArray.push(getCrystalValue());
     }
+    console.log(randomNumbersArray);
     return randomNumbersArray;
 }
 
 function getCrystalValue() {
     var num = Math.floor((Math.random() * 12) + 1);
-    console.log(num);
+    //console.log(num);
     return num;
 
 }
 function getRandomNumber() {
-   var num =Math.floor((Math.random() * 101) + 19);
-   console.log(num);
+    var num = Math.floor((Math.random() * 101) + 19);
+    return num;
 
 }
 
-getRandomNumber();
+function setClickListeners() {
+    $(".crystal").on("click", function () {
+        onShapeClick($(this).attr("point_value"));
+    })
+}
+
+function updatePointAttributValues() {
+    $("#crystal_1").attr("point_value", crystalPoints[0]);
+    $("#crystal_2").attr("point_value", crystalPoints[1]);
+    $("#crystal_3").attr("point_value", crystalPoints[2]);
+    $("#crystal_4").attr("point_value", crystalPoints[3]);
 
 
+}
+
+onStart();
 
