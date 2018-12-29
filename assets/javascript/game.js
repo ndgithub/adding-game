@@ -23,6 +23,7 @@ function updateDisplay() {
     var innerBarDiv = $("#inner_bar");
     $("#wins").html(wins);
     $("#losses").html(losses);
+    $("#outer_bar").width(Math.floor((myNumber/randomNumber) * 100) + "%");
     console.log(myNumber);
 
 

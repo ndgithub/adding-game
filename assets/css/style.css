@@ -1,42 +1,91 @@
-#instructions {
-
+body {
+    font-family: 'Quicksand'
 }
 
-#random_number {
+#instructions {
+    margin-top:40px;
+}
 
+#random_number_container {
+    color: #ff0000;
+}
+
+#bar_container {
+    width: 200px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#middle_bar {
+    width:100%;
 }
 
 #outer_bar {
-
+    height: 8px;
+    background: #000000;
+    border-radius: 7px;
+    margin-bottom: 4px;
 }
 
 #inner_bar {
-
+    height: 8px;
+    background: #ff0000;
+    border-radius: 7px;
 }
 
-#my_number {
+#my_number {}
 
-}
-
-#crystals_container {
-
-}
+#crystals_container {}
 
 #win_loss_container {
-
+    font-size: 12px;
+    border-top: 1px solid #000000;
+    display: inline-block;
+    padding: 20px 40px 20px 40px;
+    color: #6c6c6c;
+    margin-top: 40px;
 }
 
 #wins {
-
+    font-size: 24px;
 }
 
 #losses {
-
+    font-size: 24px;
 }
 
 .crystal {
-    border: 1px solid #000;
     display: inline-block;
-    height: 40px;
-    width:40px;
+    margin: 50px;
+}
+
+.red {
+    color: red;
+}
+
+img {
+    width:120px;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+.center_contents {
+    text-align: center;
+}
+
+#info_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top:40px;
+}
+
+.info {
+    font-size: 80px;
+    margin:0px 10px 0px 10px;
 }

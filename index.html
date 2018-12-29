@@ -7,28 +7,57 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 
 </head>
 
 <body>
-    <div id="instructions">Press the shapes to add.<br /> Try to match the top number without going over! </div>
-    <div id="random_number">asdf</div>
-    <div id="outer_bar">
-        <div id="inner_bar"></div>
+
+    <div id="instructions_container" class="center_contents">
+        <div id="instructions">Click the shapes to increase <span class="bold">your number</span> .
+            <br /> Try to match the <span class="red">red</span> number without going over! </div>
     </div>
-    <div id="my_number">sdf</div>
-    <div id="crystals_container">
-        <div id="crystal_1" class="crystal">crystal 1</div>
-        <div id="crystal_2" class="crystal">crystal 2</div>
-        <div id="crystal_3" class="crystal">crystal 3</div>
-        <div id="crystal_4" class="crystal">crystal 4</div>
+
+    <!-- My number-->
+    <div id="info_container" class="center_contents">
+        <div id="my_number_container" class="info">
+            <div id="my_number">sdf</div>
+        </div>
+
+        <!--Progress Bar-->
+        <div id="bar_container" class="info">
+            <div id="middle_bar">
+                <div id="outer_bar"></div>
+                <div id="inner_bar"></div>
+            </div>
+        </div>
+
+
+        <!-- Random Number to Match-->
+        <div id="random_number_container" class="info">
+            <div id="random_number">asdf</div>
+        </div>
+
     </div>
-    <div id="win_loss_container">Wins:
-        <span id="wins"></span>
-        Losses:
-        <span id="losses"></span>
+    <div id="crystals_container_container" class="center_contents">
+        <div id="crystals_container">
+            <div id="crystal_1" class="crystal"><img src="assets/images/square.svg"></div>
+            <div id="crystal_2" class="crystal"><img src="assets/images/circle.svg"></div>
+            <div id="crystal_3" class="crystal"><img src="assets/images/triangle.svg"></div>
+            <div id="crystal_4" class="crystal"><img src="assets/images/polygon.svg"></div>
+        </div>
     </div>
+
+    <!-- Win Loss Stats-->
+    <div id="win_loss_container_container" class="center_contents">
+        <div id="win_loss_container">
+            <span id="wins"></span>&nbsp;W &nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="losses"></span>&nbsp;L
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="assets/javascript/game.js"></script>
