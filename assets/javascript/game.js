@@ -20,10 +20,10 @@ function onStart() {
 function updateDisplay() {
     $("#my_number").html(myNumber);
     $("#random_number").html(randomNumber);
-    var innerBarDiv = $("#inner_bar");
     $("#wins").html(wins);
     $("#losses").html(losses);
-    $("#outer_bar").width(Math.floor((myNumber/randomNumber) * 100) + "%");
+    $("#my_number_bar").width(Math.floor((myNumber/randomNumber) * 100) + "%");
+
     console.log(myNumber);
 
 
@@ -91,6 +91,7 @@ function getRandomNumber() {
 }
 
 function setClickListeners() {
+   
     $(".crystal").on("click", function () {
         onShapeClick($(this).attr("point_value"));
     })
