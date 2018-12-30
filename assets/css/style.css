@@ -12,13 +12,14 @@ body {
 }
 
 h1 {
-    font-family: 'Bungee Inline', 'Quicksand', 'arial';
+    font-family: 'Quicksand', 'arial';
     font-size: 46px;
     margin-top: 20px;
+    font-weight: 700;
 }
 
 #welcome_container {
-    height: 100px;
+   
 }
 
 #instructions {}
@@ -30,17 +31,19 @@ h1 {
 
 #random_number_container {
     color: #ff0000;
-    width: 35%;
+    width: 40%;
+    
 }
 
 #random_number {
     color: #ff0000;
     float: left;
     font-weight: 500;
+    
 }
 
 #bar_container {
-    width: 30%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,16 +60,16 @@ h1 {
     padding: 10px;
 }
 
-#my_number_bar {
-    height: 25px;
-    background: #000000;
+#random_number_bar {
+    height: 12px;
+    background: #ff0000;
+    width: 100%;
     border-radius: 10px;
 }
 
-#random_number_bar {
-    height: 25px;
-    background: #ff0000;
-    width: 100%;
+#my_number_bar {
+    height: 12px;
+    background: #000000;
     border-radius: 10px;
 }
 
@@ -76,7 +79,7 @@ h1 {
 }
 
 #my_number_container {
-    width: 35%;
+    width: 40%;
 }
 
 #crystals_container {
@@ -131,6 +134,11 @@ img {
 }
 
 @media (max-width: 500px) {
+    h1 {
+        font-size: 32px;
+        margin-top: 20px;
+        font-weight: 700;
+    }
     .info {
         font-size: 50px;
         margin: 0px 10px 0px 10px;
@@ -139,12 +147,12 @@ img {
         font-size: 14px;
     }
     #bar_container {
-        width: 20%;
+        width: 30%;
     }
     #my_number_container {
-        width: 40%;
+        width: 35%;
     }
     #random_number_container {
-        width: 40%;
+        width: 35%;
     }
 }

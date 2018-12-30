@@ -116,11 +116,11 @@ function welcomeHoverListenersOn() {
     $("#welcome_container").hover(
         function () {
             $("#welcome_container").stop();
-            $("#welcome_container").animate({ opacity: "100" }, 1000)
+            $("#welcome_container").animate({ opacity: "100" },1000);
         },
         function () {
             $("#welcome_container").stop();
-            $("#welcome_container").animate({ opacity: "0" }, 1000)
+            $("#welcome_container").animate({ opacity: "0" }, 500, 'easeOutQuart');
         }
     );
 
