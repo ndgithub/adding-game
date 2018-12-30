@@ -10,11 +10,20 @@ var crystalValues = [];
 function onStart() {
     crystalPoints = getCrystalValuesArray();
     randomNumber = getRandomNumber();
-    console.log("red number is" + randomNumber);
     updateDisplay();
     updatePointAttributValues();
     setClickListeners();
-    console.log("caca");
+    //setUpListenersForWelcomeFade();
+    $("#crystals_container").on("click", function (event) {
+        console.log("1");
+        $("#welcome_container").animate({ opacity: "0" }, 5000, "swing");
+        console.log("2");
+        welcomeHoverListenersOn()
+        $(this).off(event);
+
+    });
+
+
 }
 
 function updateDisplay() {
@@ -22,9 +31,8 @@ function updateDisplay() {
     $("#random_number").html(randomNumber);
     $("#wins").html(wins);
     $("#losses").html(losses);
-    $("#my_number_bar").width(Math.floor((myNumber/randomNumber) * 100) + "%");
+    $("#my_number_bar").width(Math.floor((myNumber / randomNumber) * 100) + "%");
 
-    console.log(myNumber);
 
 
 }
@@ -34,18 +42,15 @@ function updateDisplay() {
 
 function onShapeClick(pointValue) {
     myNumber += parseInt(pointValue, 10);
-    console.log(myNumber + " " + randomNumber);
     if (myNumber < randomNumber) {
         updateDisplay();
-        console.log("myNumber is still Less");
     } else if (myNumber === randomNumber) {
-        console.log("i won");
+
         wins++;
         nextRound();
 
     } else {
         losses++;
-        console.log("i lost");
         nextRound();
 
     }
@@ -61,7 +66,6 @@ function isGameOver() {
 }
 
 function nextRound() {
-    console.log("nextRound()")
     randomNumber = getRandomNumber();
     myNumber = 0;
     crystalPoints = getCrystalValuesArray();
@@ -74,13 +78,11 @@ function getCrystalValuesArray() {
     for (var i = 0; i < 4; i++) {
         randomNumbersArray.push(getCrystalValue());
     }
-    console.log(randomNumbersArray);
     return randomNumbersArray;
 }
 
 function getCrystalValue() {
     var num = Math.floor((Math.random() * 12) + 1);
-    //console.log(num);
     return num;
 
 }
@@ -91,7 +93,7 @@ function getRandomNumber() {
 }
 
 function setClickListeners() {
-   
+
     $(".crystal").on("click", function () {
 
         onShapeClick($(this).attr("point_value"));
@@ -105,6 +107,23 @@ function updatePointAttributValues() {
     $("#crystal_2").attr("point_value", crystalPoints[1]);
     $("#crystal_3").attr("point_value", crystalPoints[2]);
     $("#crystal_4").attr("point_value", crystalPoints[3]);
+
+
+}
+
+function welcomeHoverListenersOn() {
+    console.log("welcomeHoverListenersOn")
+    $("#welcome_container").hover(
+        function () {
+            $("#welcome_container").stop();
+            $("#welcome_container").animate({ opacity: "100" }, 1000)
+        },
+        function () {
+            $("#welcome_container").stop();
+            $("#welcome_container").animate({ opacity: "0" }, 1000)
+        }
+    );
+
 
 
 }

@@ -5,10 +5,23 @@ body {
     max-width: 960px;
     margin: auto;
     padding:8px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+h1 {
+    font-family: 'Bungee Inline', 'Quicksand', 'arial';
+    font-size: 46px;
+    margin-top:20px;
+}
+
+#welcome_container {
+    height:100px;
 }
 
 #instructions {
-    margin-top: 40px;
 }
 .info {
     font-size: 80px;
@@ -67,7 +80,6 @@ body {
 
 #win_loss_container {
     font-size: 12px;
-    border-top: 1px solid #6c6c6c;
     display: inline-block;
     padding: 10px 40px 20px 40px;
     color: #6c6c6c;
