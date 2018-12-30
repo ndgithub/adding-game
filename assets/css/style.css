@@ -18,9 +18,11 @@ h1 {
     font-weight: 700;
 }
 
-#welcome_container {
-   
+.underline {
+    text-decoration: underline;
 }
+
+#welcome_container {}
 
 #instructions {}
 
@@ -32,14 +34,12 @@ h1 {
 #random_number_container {
     color: #ff0000;
     width: 40%;
-    
 }
 
 #random_number {
     color: #ff0000;
     float: left;
     font-weight: 500;
-    
 }
 
 #bar_container {
@@ -88,20 +88,25 @@ h1 {
 }
 
 #win_loss_container {
-    font-size: 12px;
-    display: inline-block;
+    font-size:50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding: 10px 40px 20px 40px;
     color: #6c6c6c;
     margin-top: 40px;
     font-weight: 500;
+    
 }
 
-#wins {
-    font-size: 24px;
+#wins_box {
+    margin-right:55px;
+    padding-left:40px;
 }
 
-#losses {
-    font-size: 24px;
+#losses_box {
+    margin-left:50px;
+
 }
 
 .crystal {
@@ -121,7 +126,9 @@ img {
 .bold {
     font-weight: 800;
 }
-
+.exponent {
+    font-size: 16px;
+}
 .center_contents {
     text-align: center;
 }

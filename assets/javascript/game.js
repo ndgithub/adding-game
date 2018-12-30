@@ -15,10 +15,9 @@ function onStart() {
     setClickListeners();
     //setUpListenersForWelcomeFade();
     $("#crystals_container").on("click", function (event) {
-        console.log("1");
         $("#welcome_container").animate({ opacity: "0" }, 5000, "swing");
-        console.log("2");
-        welcomeHoverListenersOn()
+        $("#win_loss_container").animate({ opacity: "0" }, 5000, "swing");
+        welcomeWinHoverListenersOn()
         $(this).off(event);
 
     });
@@ -111,16 +110,27 @@ function updatePointAttributValues() {
 
 }
 
-function welcomeHoverListenersOn() {
+function welcomeWinHoverListenersOn() {
     console.log("welcomeHoverListenersOn")
     $("#welcome_container").hover(
         function () {
             $("#welcome_container").stop();
-            $("#welcome_container").animate({ opacity: "100" },1000);
+            $("#welcome_container").animate({ opacity: "100" }, 1000);
         },
         function () {
             $("#welcome_container").stop();
             $("#welcome_container").animate({ opacity: "0" }, 500, 'easeOutQuart');
+        }
+    );
+
+    $("#win_loss_container").hover(
+        function () {
+            $("#win_loss_container").stop();
+            $("#win_loss_container").animate({ opacity: "100" }, 1000);
+        },
+        function () {
+            $("#win_loss_container").stop();
+            $("#win_loss_container").animate({ opacity: "0" }, 500, 'easeOutQuart');
         }
     );
 

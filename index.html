@@ -18,7 +18,7 @@
     <div id="welcome_container" class="center_contents">
         <h1 id="title">ADDING GAME</h1>
         <div id="instructions">Click the shapes to increase <span class="bold">your number</span> .
-            <br /> Try to match the <span class="red bold">red</span> number without going over! </div>
+            <br /> Try to match the <span class="red bold">red</span> number <span class="underline">without going over!</span> </div>
     </div>
 
 
@@ -58,11 +58,17 @@
     </div>
 
     <!-- Win Loss Stats-->
-    <div id="win_loss_container_container" class="center_contents">
-        <div id="win_loss_container">W&nbsp;
-            <span id="wins"></span> &nbsp;&nbsp;&nbsp;&nbsp;
-            L&nbsp;<span id="losses"></span>
+    <div id="win_loss_container" class="center_contents">
+        <div id="wins_box">
+            <span id="wins" class="bold"></span>
+            <span class="exponent">W</span><br>
+
         </div>
+        <div id="losses_box">
+            <span id="losses" class="bold"></span>
+            <span class="exponent">L</span><br>
+        </div>
+
     </div>
 
     <!-- Scripts -->
