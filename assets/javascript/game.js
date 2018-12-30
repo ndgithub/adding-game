@@ -93,8 +93,11 @@ function getRandomNumber() {
 function setClickListeners() {
    
     $(".crystal").on("click", function () {
+
         onShapeClick($(this).attr("point_value"));
     })
+
+
 }
 
 function updatePointAttributValues() {
