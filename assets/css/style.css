@@ -93,9 +93,10 @@ h1 {
     flex-direction: row;
     justify-content: center;
     padding: 10px 40px 20px 40px;
-    color: #6c6c6c;
-    margin-top: 40px;
+    color: #000000;
+    padding-top: 40px;
     font-weight: 500;
+    padding-bottom:100px;
     
 }
 
@@ -146,6 +147,34 @@ img {
         margin-top: 20px;
         font-weight: 700;
     }
+
+    #win_loss_container {
+        font-size:20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px 40px 20px 40px;
+        color: #000000;
+        padding-top: 40px;
+        font-weight: 500;
+        padding-bottom:100px;
+        
+    }
+    
+    #wins_box {
+        margin-right:10px;
+        padding-left:15px;
+    }
+    
+    #losses_box {
+        margin-left:10px;
+    
+    }
+    .exponent {
+        font-size: 10px;
+    }
+
+
     .info {
         font-size: 50px;
         margin: 0px 10px 0px 10px;

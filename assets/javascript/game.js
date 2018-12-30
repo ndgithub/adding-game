@@ -15,7 +15,8 @@ function onStart() {
     setClickListeners();
     //setUpListenersForWelcomeFade();
     $("#crystals_container").on("click", function (event) {
-        $("#welcome_container").animate({ opacity: "0" }, 5000, "swing");
+        $("#title").animate({ opacity: "0" }, 5000, "swing");
+        $("#instructions").animate({ opacity: "0" }, 5000, "swing");
         $("#win_loss_container").animate({ opacity: "0" }, 5000, "swing");
         welcomeWinHoverListenersOn()
         $(this).off(event);
@@ -44,8 +45,8 @@ function onShapeClick(pointValue) {
     if (myNumber < randomNumber) {
         updateDisplay();
     } else if (myNumber === randomNumber) {
-
         wins++;
+
         nextRound();
 
     } else {
@@ -65,6 +66,9 @@ function isGameOver() {
 }
 
 function nextRound() {
+    $("#win_loss_container").animate({opacity:"100"},500);
+    $("#win_loss_container").animate({opacity:"0"},4000);
+
     randomNumber = getRandomNumber();
     myNumber = 0;
     crystalPoints = getCrystalValuesArray();
@@ -114,12 +118,13 @@ function welcomeWinHoverListenersOn() {
     console.log("welcomeHoverListenersOn")
     $("#welcome_container").hover(
         function () {
+            //$("#welcome_container").stop();
             $("#welcome_container").stop();
-            $("#welcome_container").animate({ opacity: "100" }, 1000);
+            $("#instructions").animate({ opacity: "100" }, 1000);
         },
         function () {
             $("#welcome_container").stop();
-            $("#welcome_container").animate({ opacity: "0" }, 500, 'easeOutQuart');
+            $("#instructions").animate({ opacity: "0" }, 500, 'easeOutQuart');
         }
     );
 
