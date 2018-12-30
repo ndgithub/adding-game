@@ -66,6 +66,8 @@ function isGameOver() {
 }
 
 function nextRound() {
+    $("#win_loss_container").stop();
+
     $("#win_loss_container").animate({opacity:"100"},500);
     $("#win_loss_container").animate({opacity:"0"},4000);
 
