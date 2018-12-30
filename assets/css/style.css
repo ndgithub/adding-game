@@ -191,4 +191,18 @@ img {
     #random_number_container {
         width: 35%;
     }
+
+    #random_number_bar {
+        height: 6px;
+        background: #ff0000;
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    #my_number_bar {
+        height: 6px;
+        background: #000000;
+        border-radius: 10px;
+    }
+
 }
