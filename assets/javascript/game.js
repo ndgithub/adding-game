@@ -11,30 +11,18 @@ function onStart() {
     crystalPoints = getCrystalValuesArray();
     randomNumber = getRandomNumber();
     updateDisplay();
-    updatePointAttributValues();
+    setCrystalPointAttr();
     setClickListeners();
-    //setUpListenersForWelcomeFade();
-    $("#crystals_container").on("click", function (event) {
-        $("#title").animate({ opacity: "0" }, 3000, "swing");
-        $("#instructions").animate({ opacity: "0" }, 3000, "swing");
-        $("#win_loss_container").animate({ opacity: "0" }, 3000, "swing");
-        welcomeWinHoverListenersOn()
-        $(this).off(event);
-
-    });
 
 
 }
 
 function updateDisplay() {
-    $("#my_number_bar").animate({ width: (Math.floor((myNumber / randomNumber) * 100) + "%") },200,'easeOutQuart');
+    $("#my_number_bar").animate({ width: (Math.floor((myNumber / randomNumber) * 100) + "%") }, 200, 'easeOutQuart');
     $("#my_number").html(myNumber);
     $("#random_number").html(randomNumber);
     $("#wins").html(wins);
     $("#losses").html(losses);
-
-
-
 }
 
 // random number 19 - 120
@@ -65,14 +53,11 @@ function isGameOver() {
 }
 
 function nextRound() {
-    $("#win_loss_container").stop();
-    $("#win_loss_container").animate({ opacity: "100" }, 500);
-    $("#win_loss_container").animate({ opacity: "0" }, 3000);
-
+    flashWinLossContainer();
     randomNumber = getRandomNumber();
     myNumber = 0;
     crystalPoints = getCrystalValuesArray();
-    updatePointAttributValues();
+    setCrystalPointAttr();
     updateDisplay();
 }
 
@@ -89,34 +74,43 @@ function getCrystalValue() {
     return num;
 
 }
+
 function getRandomNumber() {
     var num = Math.floor((Math.random() * 101) + 19);
     return num;
 
 }
 
-function setClickListeners() {
-
-    $(".crystal").on("click", function () {
-
-        onShapeClick($(this).attr("point_value"));
-    })
-
-
+function flashWinLossContainer() {
+    $("#win_loss_container").stop();
+    $("#win_loss_container").animate({ opacity: "100" }, 500);
+    $("#win_loss_container").animate({ opacity: "0" }, 3000);
 }
 
-function updatePointAttributValues() {
+function setClickListeners() {
+    //Clicking crystals adds points
+    $(".crystal").on("click", function () {
+        onShapeClick($(this).attr("point_value"));
+    });
+
+    //
+    $("#crystals_container").on("click", function (event) {
+        $("#title").animate({ opacity: "0" }, 3000, "swing");
+        $("#instructions").animate({ opacity: "0" }, 3000, "swing");
+        $("#win_loss_container").animate({ opacity: "0" }, 3000, "swing");
+        $(this).off(event);
+    });
+    welcomeWinHoverListenersOn();
+}
+
+function setCrystalPointAttr() {
     $("#crystal_1").attr("point_value", crystalPoints[0]);
     $("#crystal_2").attr("point_value", crystalPoints[1]);
     $("#crystal_3").attr("point_value", crystalPoints[2]);
     $("#crystal_4").attr("point_value", crystalPoints[3]);
-
-
 }
 
 function welcomeWinHoverListenersOn() {
-    
-    console.log("welcomeHoverListenersOn")
     $("#welcome_container,#win_loss_container").hover(
         function () {
             $("#instructions").stop();
@@ -131,11 +125,6 @@ function welcomeWinHoverListenersOn() {
             $("#win_loss_container").animate({ opacity: "0" }, 500, 'easeOutQuart');
         }
     );
-
-  
-
-
-
 }
 
 onStart();
