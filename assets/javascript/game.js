@@ -15,9 +15,9 @@ function onStart() {
     setClickListeners();
     //setUpListenersForWelcomeFade();
     $("#crystals_container").on("click", function (event) {
-        $("#title").animate({ opacity: "0" }, 5000, "swing");
-        $("#instructions").animate({ opacity: "0" }, 5000, "swing");
-        $("#win_loss_container").animate({ opacity: "0" }, 5000, "swing");
+        $("#title").animate({ opacity: "0" }, 3000, "swing");
+        $("#instructions").animate({ opacity: "0" }, 3000, "swing");
+        $("#win_loss_container").animate({ opacity: "0" }, 3000, "swing");
         welcomeWinHoverListenersOn()
         $(this).off(event);
 
@@ -27,11 +27,11 @@ function onStart() {
 }
 
 function updateDisplay() {
+    $("#my_number_bar").animate({ width: (Math.floor((myNumber / randomNumber) * 100) + "%") },200,'easeOutQuart');
     $("#my_number").html(myNumber);
     $("#random_number").html(randomNumber);
     $("#wins").html(wins);
     $("#losses").html(losses);
-    $("#my_number_bar").width(Math.floor((myNumber / randomNumber) * 100) + "%");
 
 
 
@@ -46,7 +46,6 @@ function onShapeClick(pointValue) {
         updateDisplay();
     } else if (myNumber === randomNumber) {
         wins++;
-
         nextRound();
 
     } else {
@@ -67,9 +66,8 @@ function isGameOver() {
 
 function nextRound() {
     $("#win_loss_container").stop();
-
-    $("#win_loss_container").animate({opacity:"100"},500);
-    $("#win_loss_container").animate({opacity:"0"},4000);
+    $("#win_loss_container").animate({ opacity: "100" }, 500);
+    $("#win_loss_container").animate({ opacity: "0" }, 3000);
 
     randomNumber = getRandomNumber();
     myNumber = 0;
@@ -117,29 +115,24 @@ function updatePointAttributValues() {
 }
 
 function welcomeWinHoverListenersOn() {
+    
     console.log("welcomeHoverListenersOn")
-    $("#welcome_container").hover(
+    $("#welcome_container,#win_loss_container").hover(
         function () {
-            //$("#welcome_container").stop();
-            $("#welcome_container").stop();
-            $("#instructions").animate({ opacity: "100" }, 1000);
+            $("#instructions").stop();
+            $("#win_loss_container").stop();
+            $("#instructions").animate({ opacity: "100" }, 500);
+            $("#win_loss_container").animate({ opacity: "100" }, 500);
         },
         function () {
-            $("#welcome_container").stop();
+            $("#instructions").stop();
+            $("#win_loss_container").stop();
             $("#instructions").animate({ opacity: "0" }, 500, 'easeOutQuart');
-        }
-    );
-
-    $("#win_loss_container").hover(
-        function () {
-            $("#win_loss_container").stop();
-            $("#win_loss_container").animate({ opacity: "100" }, 1000);
-        },
-        function () {
-            $("#win_loss_container").stop();
             $("#win_loss_container").animate({ opacity: "0" }, 500, 'easeOutQuart');
         }
     );
+
+  
 
 
 

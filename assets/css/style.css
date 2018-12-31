@@ -1,4 +1,6 @@
-html {}
+html {
+    background: #fcfcff;
+}
 
 body {
     font-family: 'Quicksand', 'arial', 'sans serif';
@@ -56,7 +58,6 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 10px solid #ffffff;
     padding: 10px;
 }
 
@@ -88,32 +89,34 @@ h1 {
 }
 
 #win_loss_container {
-    font-size:50px;
+    font-size: 50px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 10px 40px 20px 40px;
-    color: #000000;
+    color: #666666;
     padding-top: 40px;
     font-weight: 500;
-    padding-bottom:100px;
-    
+    padding-bottom: 100px;
 }
 
 #wins_box {
-    margin-right:55px;
-    padding-left:40px;
+    margin-right: 55px;
+    padding-left: 40px;
 }
 
 #losses_box {
-    margin-left:50px;
-
+    margin-left: 50px;
 }
 
 .crystal {
     display: inline-block;
     width: 25%;
     padding: 5%;
+}
+
+.crystal:hover {
+    
 }
 
 .red {
@@ -127,9 +130,11 @@ img {
 .bold {
     font-weight: 800;
 }
+
 .exponent {
     font-size: 16px;
 }
+
 .center_contents {
     text-align: center;
 }
@@ -147,34 +152,26 @@ img {
         margin-top: 20px;
         font-weight: 700;
     }
-
     #win_loss_container {
-        font-size:20px;
+        font-size: 20px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         padding: 10px 40px 20px 40px;
-        color: #000000;
         padding-top: 40px;
         font-weight: 500;
-        padding-bottom:100px;
-        
+        padding-bottom: 100px;
     }
-    
     #wins_box {
-        margin-right:10px;
-        padding-left:15px;
+        margin-right: 10px;
+        padding-left: 15px;
     }
-    
     #losses_box {
-        margin-left:10px;
-    
+        margin-left: 10px;
     }
     .exponent {
         font-size: 10px;
     }
-
-
     .info {
         font-size: 50px;
         margin: 0px 10px 0px 10px;
@@ -191,18 +188,15 @@ img {
     #random_number_container {
         width: 35%;
     }
-
     #random_number_bar {
         height: 6px;
         background: #ff0000;
         width: 100%;
         border-radius: 10px;
     }
-    
     #my_number_bar {
         height: 6px;
         background: #000000;
         border-radius: 10px;
     }
-
 }
