@@ -24,10 +24,6 @@ h1 {
     text-decoration: underline;
 }
 
-#welcome_container {}
-
-#instructions {}
-
 .info {
     font-size: 80px;
     margin: 0px 10px 0px 10px;
@@ -113,10 +109,6 @@ h1 {
     display: inline-block;
     width: 25%;
     padding: 5%;
-}
-
-.crystal:hover {
-    
 }
 
 .red {
