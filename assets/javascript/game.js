@@ -79,15 +79,14 @@ function setClickListeners() {
 
     //Initial Fade Out Info listener
     $("#crystals_container").on("click", function (event) {
-        $("#title").animate({ opacity: "0" }, 3000, "swing");
-        $("#instructions").animate({ opacity: "0" }, 3000, "swing");
-        $("#win_loss_container").animate({ opacity: "0" }, 3000, "swing");
+        $("#welcome_container").animate({ opacity: "0" }, 3000, "swing");
+        $("#win_loss_container").animate({ opacity: "0" }, 3000, "swing", function () {
+            $("#welcome_container,#win_loss_container").hover(fadeInInfo, fadeOutInfo);
+        });
         $(this).off(event);
     });
     //Hover listeners for Info
-    $("#welcome_container,#win_loss_container").hover(fadeInInfo,fadeOutInfo);
 
-    
 }
 
 function setCrystalPointAttr() {
@@ -104,16 +103,18 @@ function flashWinLossContainer() {
 }
 
 function fadeInInfo() {
-    $("#instructions").stop();
+    $("#welcome_container").stop();
     $("#win_loss_container").stop();
-    $("#instructions").animate({ opacity: "100" }, 500);
+    $("#welcome_container").animate({ opacity: "100" }, 500);
     $("#win_loss_container").animate({ opacity: "100" }, 500);
+
+
 }
 
 function fadeOutInfo() {
-    $("#instructions").stop();
+    $("#welcome_container").stop();
     $("#win_loss_container").stop();
-    $("#instructions").animate({ opacity: "0" }, 500, 'easeOutQuart');
+    $("#welcome_container").animate({ opacity: "0" }, 500, 'easeOutQuart');
     $("#win_loss_container").animate({ opacity: "0" }, 500, 'easeOutQuart');
 }
 
