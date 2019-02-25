@@ -1,6 +1,5 @@
  <p align="center">
   <img width="50%" src="assets/images/adding-game-screenshot.png">
-</p>
 
 
 # Adding Game
@@ -11,5 +10,6 @@ A simple game made with HTML/CSS, Javascript, and jQuery
 * Setting custom data attributes to HTML elements
 
 ## Deployed Site
-[GitHub](https://ndgithub.github.io/adding-game/)
+[https://ndgithub.github.io/adding-game/](https://ndgithub.github.io/adding-game/)
+
 
