@@ -1,9 +1,15 @@
-Inline-style: 
-![alt text](https://raw.githubusercontent.com/ndgithub/assets/master/project-screenshots/adding-game-screenshot.png?token=AIutcFfnpzKy6bwFj8ufhLfxkA8W3WcYks5cdA25wA%3D%3D)
-
-
-
+ <p align="center">
+  <img width="50%" src="assets/images/adding-game-screenshot.png">
+</p>
 
 
 # Adding Game
-A simple game made with HTML/CSS, Javascript, and jQuery for DOM manipulation
+A simple game made with HTML/CSS, Javascript, and jQuery
+
+## Things I learned
+* Using jQuery for simple DOM manipulation, event listening and animations 
+* Setting custom data attributes to HTML elements
+
+## Deployed Site
+[GitHub](https://ndgithub.github.io/adding-game/)
+
